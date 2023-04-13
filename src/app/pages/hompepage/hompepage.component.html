@@ -1,1 +1,31 @@
-<p>hompepage works!</p>
+<div class="container">
+    <h1 class="title">
+        Calendrier des sorties
+    </h1>
+    <h2 class="subtitle">
+        Filtres de recherche
+    </h2>
+
+    <div class="filter-container">
+        <app-dropdown [placeholder]="'Toutes les années'"></app-dropdown>
+        <app-dropdown [placeholder]="'Tous les genres'"></app-dropdown>
+        <app-input-text [placeholder]="'Rechercher'"></app-input-text>
+    </div>
+    
+    <!-- <div>
+        <app-button [label]="'Sorties à venir'"></app-button>
+        <app-button [label]="'Sorties passées'"></app-button>
+    </div> -->
+
+</div>
+
+<div class="container-action">
+    <div class="button" (click)="bActif = true" [ngClass]="{'actif': bActif}">
+        Sorties à venir
+    </div>
+    <div class="button" (click)="bActif = false" [ngClass]="{'actif': !bActif}">
+        Sorties passées
+    </div>
+</div>
+
+<app-calendar-out></app-calendar-out>

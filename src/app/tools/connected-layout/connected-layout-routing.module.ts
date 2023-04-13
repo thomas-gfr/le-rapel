@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConnectedLayoutComponent } from './connected-layout.component';
 
 const routes: Routes = [
-    {
-        path: 'connexion',
-    },
-    {
+    { 
         path: '',
+        component: ConnectedLayoutComponent,
+        children: [
+            { path: 'home', loadChildren: () => import('../../pages/hompepage/homepage.module').then(m => m.HomepageModule) },
+        ]
     }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class ConnectedLayoutRoutingModule { }

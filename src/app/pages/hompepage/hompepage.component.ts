@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HompepageComponent implements OnInit {
 
-  constructor() { }
+    public bActif = true;
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }
